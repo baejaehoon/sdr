@@ -84,6 +84,7 @@ io.sockets.on('echo', function(msg){
 io.emit(msg+"sv")
 });
 
-http.listen(port, function(){
-    console.log('SERVER IS READY FOR [*:'+port+']');
+http.listen(process.env.PORT, function(){
+    console.log('SERVER IS READY FOR ['+process.env.IP+':'+process.env.PORT+']');
+    // 원래는 localhost IP와 80번 포트 (웹)을 사용하나, cloud9 정책에 의해 process.env.IP|PORT 사용
 });
